@@ -1,0 +1,8 @@
+#ここはメモを書いていきます。
+
+
+#sailコマンドのalias
+#alias sail='./vendor/bin/sail' (くっ付ける)
+
+#コントローラーを作る
+#sail php artisan make:controller コントローラー名
