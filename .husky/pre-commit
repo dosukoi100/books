@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+#docker上で行いたいのでsailコマンドで実行するようにする
+
+#composer.jsonファイルに記述したphpcbfを実行する
+"./vendor/bin/sail" composer phpcbf
+
+#テストを実行する
+#npm test
+#"./vendor/bin/sail" test

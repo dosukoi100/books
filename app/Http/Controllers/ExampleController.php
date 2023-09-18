@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //Exampleモデル(examplesテーブル)を呼び出す
 use App\Models\Example;
 use Illuminate\Http\Request;
+
 //直接SQLを使うときに呼び出す
 //use Illuminate\Support\Facades\DB;
 
@@ -20,9 +21,9 @@ class ExampleController extends Controller
         //$examples = Example::find(2);//idを指定して取得
         //$examples = Example::where('id',3) -> get() ;//where文
         //$examples = Example::wherein('id',[1,3]) -> get();//複数条件
-        
+
         //return view(view: 'example', ['examples' => $examples] );
-        return view('example', ['examples' => $examples] );
+        return view('example', ['examples' => $examples]);
 
         //---クエリビルダ----
 
@@ -44,7 +45,6 @@ class ExampleController extends Controller
         //----SQL文直接の場合-------
 
         //return view(view: 'example', ['examples' => $examples] );
-        return view('example', ['examples' => $examples] );
-
+        return view('example', ['examples' => $examples]);
     }
 }
