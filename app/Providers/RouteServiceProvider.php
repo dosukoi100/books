@@ -17,7 +17,9 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    //ログイン後の遷移先を指定
+    public const HOME = '/dashboard';
+    //public const HOME = 'https://amazon.com';
 
     /**
      * Define your route model bindings, pattern filters, and other route configuration.

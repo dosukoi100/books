@@ -6,3 +6,7 @@
 
 #コントローラーを作る
 #sail php artisan make:controller コントローラー名
+
+#Viteサーバーの立ち上げ
+#sail npm run dev  (開発環境)
+#sail npm run build または sail npm run watch (本番環境)

@@ -1,9 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-//コントローラーを呼び出す
-use App\http\Controllers\ExampleController;
-use App\http\Controllers\TmpController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,36 +14,28 @@ use App\http\Controllers\TmpController;
 |
 */
 
-//＊＊＊Laravelでは***.blade.phpがhtmlファイルとなる＊＊＊
-
-//書式1
-/* 
-Route::メソッド('URLパス',関数{
-    return view('***');
-    return books/resources/views/***.blade.phpの意味
-});
-*/
-
 Route::get('/', function () {
     return view('welcome');
+    /* ミドルウェアを使って再度パスワード確認をする */
+//})->middleware(['password.confirm']);
 });
 
-//書式2
-/*
-Route::get('URLパス',[コントローラーの指定::class,'コントローラーの関数名']);
-Djangoのurls.py的に似ている
-*/
+//----Breezeインストール後追加----------------
 
-//Route::get(uri:'/',[ExampleController::class,'index']);
-//Laravel10では上のuri:を指定するとエラーとなるのでこちら
-Route::get('/example', [ExampleController::class, 'example']);
+//ダッシュボード
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard')->middleware('verified');
 
-
-//URLパス/testとするとbooks/resources/views/test.blade.php
-//を表示する
-Route::get('/test',function () {
-    return view('test');
+//ミドルウェアでプロフィール作成・編集・削除
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/tmp',[TmpController::class,'tmp']);
+//認証。メインのディレクトリに繋ぐ
+require __DIR__.'/auth.php';
+
+//----Breezeインストール後追加----------------
 

@@ -71,7 +71,7 @@ return [
     */
 
     //タイムゾーン設定
-    //'timezone' => 'UTC',
+    //'timezone' => 'Asia/Tokyo',
     'timezone' => 'Asia/Tokyo',
 
     /*
@@ -86,8 +86,8 @@ return [
     */
 
     //言語設定
-    //'locale' => 'en',
-    'local' => 'ja',
+    //'locale' => 'ja',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -114,7 +114,7 @@ return [
     */
 
     //嘘の名前、住所、メールアドレスを使える様にする
-    //'faker_locale' => 'en_US',
+    //'faker_locale' => 'ja_JP',
     'faker_locali' => 'ja_JP',
     
 
