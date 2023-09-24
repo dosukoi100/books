@@ -4,20 +4,22 @@
          bootstrap="vendor/autoload.php"
          colors="true"
 >
-    <testsuites>
-        <testsuite name="Unit">
-            <directory>tests/Unit</directory>
+    <testsuites><!-- テスト全体 -->
+        <testsuite name="Unit"> <!-- Unitテスト -->
+            <directory>tests/Unit</directory> <!-- ディレクトリの指定 -->
         </testsuite>
-        <testsuite name="Feature">
-            <directory>tests/Feature</directory>
+        <testsuite name="Feature"> <!-- Featureテスト -->
+            <directory>tests/Feature</directory> <!-- ディレクトリの指定 -->
+            <!-- <exclude>ここに除外するファイルパスを記述</exclude> -->
         </testsuite>
     </testsuites>
-    <source>
+    <source> <!-- テストの対象を指定 -->
         <include>
-            <directory>app</directory>
+            <directory>app</directory> <!-- app/以下が対象 -->
         </include>
     </source>
     <php>
+        <!-- 環境設定ファイルを指定。下記なら.env.testingとなる -->
         <env name="APP_ENV" value="testing"/>
         <env name="BCRYPT_ROUNDS" value="4"/>
         <env name="CACHE_DRIVER" value="array"/>
