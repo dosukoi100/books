@@ -18,8 +18,18 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        //ここにシーダーを記述することによりクラス名無しで
+        //シーダーを実行できる
+
+        //ExampleSeederのシーダーの呼び出し
         $this->call([
             ExampleSeeder::class,
+        ]);
+
+        //BookSeederの呼び出し
+        $this->call([
+            BookSeeder::class,
         ]);
     }
 }

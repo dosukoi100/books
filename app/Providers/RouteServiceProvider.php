@@ -18,7 +18,8 @@ class RouteServiceProvider extends ServiceProvider
      * @var string
      */
     //ログイン後の遷移先を指定
-    public const HOME = '/dashboard';
+    // public const HOME = '/dashboard';
+    public const HOME = '/book';
     //public const HOME = 'https://amazon.com';
 
     /**

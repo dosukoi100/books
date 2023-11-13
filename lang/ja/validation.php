@@ -247,6 +247,12 @@ return [
         'updated_at' => '更新日',
         'username' => 'ユーザー名',
         'year' => '年',
+        //bookアプリ用のen->ja
+        'status' => 'ステータス',
+        'author' => '著者',
+        'publication' => '出版',
+        'note' => 'メモ',
+        'read_at' => '読み終わった日',
     ],
 
 ];

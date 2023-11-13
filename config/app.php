@@ -42,7 +42,11 @@ return [
     |
     */
 
+    //エラーの表示true、非表示false
     'debug' => (bool) env('APP_DEBUG', false),
+    //'debug' => env('APP_DEBUG',false),
+
+
 
     /*
     |--------------------------------------------------------------------------

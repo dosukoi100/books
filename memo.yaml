@@ -4,8 +4,14 @@
 #sailコマンドのalias
 #alias sail='./vendor/bin/sail' (くっ付ける)
 
+#モデルを作成する
+#sail php artisan make:model モデル名(単数形)
+
 #コントローラーを作る
 #sail php artisan make:controller コントローラー名
+
+#Seederの実行
+#sail php artisan db:seed -class=クラス名
 
 #(DB)MySQLの設定
 #DB_CONNECTION=mysql
